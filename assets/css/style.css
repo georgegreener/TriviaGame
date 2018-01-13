@@ -1,0 +1,73 @@
+@font-face {
+    font-family: starWars;
+    src: url(starjedi/Starjedi.ttf);
+}
+
+body {
+    background-image: url(../images/cantina.jpg);
+    background-size: cover;
+}
+
+.container {
+    background-color: antiquewhite;
+    opacity: 0.70;
+    height: 700px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#gameTitle {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 100px;
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin: 25px;
+}
+
+#timeRemaining {
+    margin-bottom: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+#questionAsked {
+    margin-bottom: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+#answerChoices {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+#choiceOne {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    height: 75px;
+    width: 250px;
+}
+
+#choiceTwo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    height: 75px;
+    width: 250px;
+}
+
+#choiceThree {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    height: 75px;
+    width: 250px;
+}
