@@ -16,12 +16,8 @@ $(document).ready(function() {
         playMusic();
         $("#timeRemaining").html("<h2>" + "Click to Start Game" + "</h2>");
         $("#timeRemaining").on("click", keepTime);
-        
-    };
-
-    startGame();
-
-    function keepTime() {
+        // Got timer working - with bugs
+        function keepTime() {
         function run() {
             intervalID = setInterval(decrement, 1000);
             clockRunning = true;
@@ -42,7 +38,10 @@ $(document).ready(function() {
         }
         run();
         decrement();
+        };  
     };
+
+    startGame();
 
     var questions = [
         "According to C3PO, what are the odds of successfully navigating an asteroid field?",
