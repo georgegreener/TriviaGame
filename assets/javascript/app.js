@@ -18,31 +18,33 @@ $(document).ready(function() {
         $("#timeRemaining").on("click", keepTime);
         // Got timer working - with bugs
         function keepTime() {
-        function run() {
-            intervalID = setInterval(decrement, 1000);
-            clockRunning = true;
-        }
-        function decrement() {
-            number--;
-            $("#timeRemaining").html(number);
-            if (number === 0) {
-                stop();
-                number = 30;
+            function run() {
+                intervalID = setInterval(decrement, 1000);
+                clockRunning = true;
             }
-        }
-        function stop() {
-            clearInterval(intervalID);
-            clockRunning = false;
-            $("#timeRemaining").html("Time's up!");
-            setTimeout(keepTime, 5000);
-        }
-        run();
-        decrement();
+            function decrement() {
+                number--;
+                $("#timeRemaining").html(number);
+                if (number === 0) {
+                    stop();
+                    number = 30;
+                }
+            }
+            function stop() {
+                clearInterval(intervalID);
+                clockRunning = false;
+                $("#timeRemaining").html("Time's up!");
+                setTimeout(keepTime, 5000);
+            }
+            run();
+            decrement();
         };  
     };
 
     startGame();
 
+    // Figured out how to reference questions and answer choices and append to HTML
+    // Still having trouble figuring out how to dynamically update questions/answers based on timer function
     var questions = [
         "According to C3PO, what are the odds of successfully navigating an asteroid field?",
         "What is the name of Lando's copilot in Return of the Jedi?",
