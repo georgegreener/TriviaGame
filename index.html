@@ -27,6 +27,10 @@
             <h3></h3>
         </div>
 
+        <div id="start">
+            <button id="startButton">Start</button>
+        </div>
+
         <div id="questionAsked">
             <h2></h2>
         </div>
@@ -41,3 +45,187 @@
     
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars Trivia</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="gameTitle">
+            <h1>Star Wars Trivia</h1>
+            <p>It's trivia night at the Mos Eisley cantina.</p>
+            <p>Test your knowledge of a galaxy far, far away...</p>
+            <p>The force is with you, but you are not a jedi yet.</p>
+        </div>
+
+        <div id="timeRemaining">
+            <h3></h3>
+        </div>
+
+        <div id="displayGIF"></div>
+
+        <div id="questionAsked">
+            <h2>What are the odds?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question1" value="true">
+            <label for="answerChoice1">3,720 to 1</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question1" value="true">
+            <label for="answerChoice2">8,330 to 1</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question1" value="true">
+            <label for="answerChoice3">15,680</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>Who is the copilot?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question2" value="true">
+            <label for="answerChoice1">Nien Nunb</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question2" value="true">
+            <label for="answerChoice2">Wedge Antilles</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question2" value="true">
+            <label for="answerChoice3">Biggs Darklighter</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>Who shot first?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question3" value="true">
+            <label for="answerChoice1">Greedo</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question3" value="true">
+            <label for="answerChoice2">Han Solo</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question3" value="true">
+            <label for="answerChoice3">Chewbacca</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>What 1930's serial most-inspired Star Wars?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question4" value="true">
+            <label for="answerChoice1">Flash Gordon</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question4" value="true">
+            <label for="answerChoice2">Buck Rogers</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question4" value="true">
+            <label for="answerChoice3">Dick Tracy</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>What bounty hunter in Empire Strikes Back is wearing an old Dr. Who costume?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question5" value="true">
+            <label for="answerChoice1">Bossk</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question5" value="true">
+            <label for="answerChoice2">IG-88</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question5" value="true">
+            <label for="answerChoice3">Boba Fett</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>George Lucas told Carrie Fisher that in space, there is no what?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question6" value="true">
+            <label for="answerChoice1">Underwear</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question6" value="true">
+            <label for="answerChoice2">Toilet paper</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question6" value="true">
+            <label for="answerChoice3">Bananas</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>How old was Yoda when he died?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question7" value="true">
+            <label for="answerChoice1">900</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question7" value="true">
+            <label for="answerChoice2">1200</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question7" value="true">
+            <label for="answerChoice3">700</label>
+        </div>
+
+        <div id="questionAsked">
+            <h2>How many forms of communication is C-3PO fluent in?</h2>
+        </div>
+
+        <div id="answerChoices">
+            <input type="radio" id="answerChoice1"
+            name="question8" value="true">
+            <label for="answerChoice1">Over 6 million</label>
+
+            <input type="radio" id="answerChoice2"
+            name="question8" value="true">
+            <label for="answerChoice2">Over 3 Million</label>
+
+            <input type="radio" id="answerChoice3"
+            name="question8" value="true">
+            <label for="answerChoice3">Over 9 million</label>
+        </div>
+
+        <div id="submitAnswers">
+            <button id="submit">Submit</button>
+        </div>
+
+    </div>
+    
+</body>
+</html> -->

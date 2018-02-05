@@ -1,50 +1,11 @@
 $(document).ready(function() {
 
     var number = 30;
+    var count = 0;
+    var choiceArray = 0;
     var intervalID;
     var clockRunning;
 
-    function startGame() {
-        function playMusic() {
-            var cantinaband1 = document.createElement("audio");
-            var cantinaband2 = document.createElement("audio");
-            cantinaband1.setAttribute("src", "assets/audio/cantinaband1.mp3");
-            cantinaband2.setAttribute("src", "assets/audio/cantinaband2.mp3");
-            var setList = [cantinaband1, cantinaband2];
-            cantinaband1.play();
-        }
-        playMusic();
-        $("#timeRemaining").html("<h2>" + "Click to Start Game" + "</h2>");
-        $("#timeRemaining").on("click", keepTime);
-        // Got timer working - with bugs
-        function keepTime() {
-            function run() {
-                intervalID = setInterval(decrement, 1000);
-                clockRunning = true;
-            }
-            function decrement() {
-                number--;
-                $("#timeRemaining").html(number);
-                if (number === 0) {
-                    stop();
-                    number = 30;
-                }
-            }
-            function stop() {
-                clearInterval(intervalID);
-                clockRunning = false;
-                $("#timeRemaining").html("Time's up!");
-                setTimeout(keepTime, 5000);
-            }
-            run();
-            decrement();
-        };  
-    };
-
-    startGame();
-
-    // Figured out how to reference questions and answer choices and append to HTML
-    // Still having trouble figuring out how to dynamically update questions/answers based on timer function
     var questions = [
         "According to C3PO, what are the odds of successfully navigating an asteroid field?",
         "What is the name of Lando's copilot in Return of the Jedi?",
@@ -56,12 +17,8 @@ $(document).ready(function() {
         "How many languages is C3PO fluent in?"
     ];
 
-    function appendQuestion() {
-        $("#questionAsked").html(questions[0]);
-    };
-
-    appendQuestion();
-
+    // I experimented with nested arrays, but couldn't figure out to reference the choices correctly
+    // I can target the array items in this format, but not sure how to move through the object based on timer
     var answerChoices = {
         choicesForQuestionOne: [
             "3,720 to 1",
@@ -105,12 +62,57 @@ $(document).ready(function() {
         ]
     };
 
-    function appendChoices() {
-        $("#choiceOne").html(answerChoices.choicesForQuestionOne[0]);
-        $("#choiceTwo").html(answerChoices.choicesForQuestionOne[1]);
-        $("#choiceThree").html(answerChoices.choicesForQuestionOne[2]);
+    // All logic is nested in startGame() function
+    function startGame() {
+        function playMusic() {
+            var cantinaband1 = document.createElement("audio");
+            var cantinaband2 = document.createElement("audio");
+            cantinaband1.setAttribute("src", "assets/audio/cantinaband1.mp3");
+            cantinaband2.setAttribute("src", "assets/audio/cantinaband2.mp3");
+            var setList = [cantinaband1, cantinaband2];
+            cantinaband1.play();
+        }
+        playMusic();
+        $("#questionAsked").hide();
+        $("#answerChoices").hide();
+        $("#timeRemaining").html("<h2>" + "Click to Start Game" + "</h2>");
+        $("#startButton").on("click", keepTime);
+        function keepTime() {
+            $("#startButton").hide();
+            $("#questionAsked").show(displayQuestion);
+            $("#answerChoices").show(displayChoices);
+            function displayQuestion() {
+                $("#questionAsked").html(questions[count]);
+            }
+            function displayChoices() {
+                $("#choiceOne").html(answerChoices.choicesForQuestionOne[choiceArray]);
+                $("#choiceTwo").html(answerChoices.choicesForQuestionOne[choiceArray + 1]);
+                $("#choiceThree").html(answerChoices.choicesForQuestionOne[choiceArray + 2]);
+            }
+            function run() {
+                intervalID = setInterval(decrement, 1000);
+                clockRunning = true;
+            }
+            function decrement() {
+                number--;
+                $("#timeRemaining").html(number);
+                if (number === 0) {
+                    stop();
+                    number = 30;
+                }
+            }
+            function stop() {
+                clearInterval(intervalID);
+                count++;
+                clockRunning = false;
+                $("#timeRemaining").html("Time's up!");
+                setTimeout(keepTime, 5000);
+            }
+            run();
+            decrement();
+        };  
     };
 
-    appendChoices();
+    startGame();
 
 });
