@@ -3,6 +3,7 @@ $(document).ready(function() {
     var number = 30;
     var count = 0;
     var choiceArray = 0;
+    var musicCount = 0;
     var intervalID;
     var clockRunning;
 
@@ -68,8 +69,11 @@ $(document).ready(function() {
             var cantinaband2 = document.createElement("audio");
             cantinaband1.setAttribute("src", "assets/audio/cantinaband1.mp3");
             cantinaband2.setAttribute("src", "assets/audio/cantinaband2.mp3");
-            var setList = [cantinaband1, cantinaband2];
             cantinaband1.play();
+            setTimeout(playNextSong, 1000 * 165);
+            function playNextSong() {
+                cantinaband2.play();
+            }
         }
         playMusic();
         $("#questionAsked").hide();
