@@ -56,14 +56,3 @@ button {
     width: 300px;
     font-size: 20px;
 }
-
-#submit {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 25px;
-    height: 75px;
-    width: 250px;
-}
-
-label {
-    font-size: 30px;
-}

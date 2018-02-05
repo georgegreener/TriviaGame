@@ -63,6 +63,9 @@ $(document).ready(function() {
     };
 
     // All logic is nested in startGame() function
+    // Able to append questions based on keepTime() function
+    // Haven't figured out best way to append answer choices yet
+    // Buttons currently do not work, and currently no score
     function startGame() {
         function playMusic() {
             var cantinaband1 = document.createElement("audio");
