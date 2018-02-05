@@ -17,54 +17,50 @@ $(document).ready(function() {
         "How many languages is C3PO fluent in?"
     ];
 
-    // I experimented with nested arrays, but couldn't figure out to reference the choices correctly
-    // I can target the array items in this format, but not sure how to move through the object based on timer
-    var answerChoices = {
-        choicesForQuestionOne: [
+    var answerChoices = [
+        [
             "3,720 to 1",
             "8,330 to 1",
             "15,680 to 1"
         ],
-        choicesForQuestionTwo: [
+        [
             "Nien Nunb",
             "Wedge Antilles",
             "Biggs Darklighter"
         ],
-        choicesForQuestionThree: [
+        [
             "Han Solo",
             "Greedo",
             "Chewbacca"
         ],
-        choicesForQuestionFour: [
+        [
             "Flash Gordon",
             "Buck Rogers",
             "Dick Tracy"
         ],
-        choicesForQuestionFive: [
+        [
             "Bossk",
             "IG-88",
             "Boba Fett"
         ],
-        choicesForQuestionSix: [
+        [
             "Underwear",
             "Toilet Paper",
             "Bananas"
         ],
-        choicesForQuestionSeven: [
+        [
             "900",
             "1,200",
             "700"
         ],
-        choicesForQuestionEight: [
+        [
             "Over 6 million",
             "Over 3 million",
             "Over 9 million"
         ]
-    };
+    ];
 
     // All logic is nested in startGame() function
-    // Able to append questions based on keepTime() function
-    // Haven't figured out best way to append answer choices yet
     // Buttons currently do not work, and currently no score
     function startGame() {
         function playMusic() {
@@ -88,9 +84,9 @@ $(document).ready(function() {
                 $("#questionAsked").html(questions[count]);
             }
             function displayChoices() {
-                $("#choiceOne").html(answerChoices.choicesForQuestionOne[choiceArray]);
-                $("#choiceTwo").html(answerChoices.choicesForQuestionOne[choiceArray + 1]);
-                $("#choiceThree").html(answerChoices.choicesForQuestionOne[choiceArray + 2]);
+                $("#choiceOne").html(answerChoices[count][choiceArray]);
+                $("#choiceTwo").html(answerChoices[count][choiceArray + 1]);
+                $("#choiceThree").html(answerChoices[count][choiceArray + 2]);
             }
             function run() {
                 intervalID = setInterval(decrement, 1000);
